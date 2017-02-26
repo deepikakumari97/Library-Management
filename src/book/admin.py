@@ -2,8 +2,8 @@ from django.contrib import admin
 
 # Register your models here.
 # Register your models here.
-from .models import Book, LendPeriods, Publisher, Author, UserProfile 
+from .models import Book, LendPeriods, Isbn
 
-admin.site.Register(Book)
-admin.site.Register(LendPeriods)
-admin.site.Register(Isbn)
+admin.site.register(Book)
+admin.site.register(LendPeriods)
+admin.site.register(Isbn)
