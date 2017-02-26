@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -109,7 +110,7 @@ class UserProfile(models.Model):
     civil = 'CE'
     mechanical = 'ME'
     branch_choices = (
-        (computer,'Computer_Engineering),
+        (computer,'Computer_Engineering'),
         (electrical,'Electrical_Engineering'),
         (electronics,'Elecltronic_and_Communication_Engineering')
         (civil,'Civil_Engineering')
@@ -117,7 +118,7 @@ class UserProfile(models.Model):
     )
     branch = models.choices(max_length=2,choices = branch_choices)
 
-    roll no = IntegerField(validators=[MaxValueValidator(150), MinValueValidator(1)])
+    roll_no = IntegerField(validators=[MaxValueValidator(150), MinValueValidator(1)])
     mobile = models.CharField(max_length=10, null=True, blank=True)
     email = models.EmailField(max_length=30, null=True, blank=True)
     join_date = models.DateField(auto_now_add=True)
